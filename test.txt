@@ -1,0 +1,53 @@
+<?php 
+include("connection.php");
+
+var_dump(isset($_POST['register']));
+
+$name = $_POST["name"];
+$email = $_POST["email"];
+$username = $_POST["username"];
+$password = $_POST["password"];
+$confirm_password = $_POST["confirm_password"];
+
+$connect->query("INSERT INTO users (name, username, email, password) VALUES ('$name',  '$username', '$email', '$password')")
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        <div class="mb-3">
+            <label for="">name</label>
+            <input name="name" type="text" class="form-control" placeholder="name">
+        </div>
+        <div class="mb-3">
+            <label for="">username</label>
+            <input name="username" type="text" class="form-control" placeholder="username">
+        </div>
+        <div class="mb-3">
+            <label for="">email</label>
+            <input name="email" type="text" class="form-control" placeholder="email">
+        </div>
+        <div class="mb-3">
+            <label for="">password</label>
+            <input name="password" type="password" class="form-control" placeholder="password">
+        </div>
+        <div class="mb-3">
+            <label for="">confirm password</label>
+            <input name="confirm_password" type="password" class="form-control" placeholder="confirm password">
+        </div>
+        <div class="mb-3">
+            <button name="register">Register</button>
+        </div>
+    </form>
+</body>
+
+</html>
